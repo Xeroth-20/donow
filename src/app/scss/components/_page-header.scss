@@ -1,0 +1,28 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.page-header {
+	display: flex;
+
+	margin-bottom: 56px;
+	height: $page-header-height;
+
+	.nav-container {
+		display: flex;
+		flex: 1 0 auto;
+	}
+
+	.actions-container {
+		flex: 0 0 auto;
+	}
+
+	.brand {
+		color: $text-normal;
+		display: inline-block;
+		font-size: $text-xl;
+		line-height: $line-height;
+
+		padding: 2px 0;
+		margin-right: 42px;
+	}
+}

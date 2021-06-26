@@ -1,0 +1,18 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.todo-stats {
+	border: 1px solid $border-variant;
+	border-radius: $border-radius;
+	color: $text-normal;
+	font-size: $text-sm;
+
+	padding: 6px 10px;
+}
+
+.todo-stats.small {
+	color: $text-not-muted;
+	font-size: $text-sm;
+
+	padding: 4px 8px;
+}

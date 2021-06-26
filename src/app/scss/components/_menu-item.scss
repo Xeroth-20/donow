@@ -1,0 +1,25 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$pad-size: 4px;
+
+.menu-item {
+	padding: 0 $pad-size;
+
+	.menu-item-btn {
+		border-radius: $border-radius;
+		color: $text-normal;
+		cursor: pointer;
+		font-size: $text-sm;
+		text-align: start;
+		transition-property: background-color;
+		transition-duration: $transition-duration;
+		white-space: nowrap;
+
+		padding: $pad-size $pad-size * 1.5;
+
+		&:hover {
+			background-color: $bg-gray;
+		}
+	}
+}

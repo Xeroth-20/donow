@@ -1,0 +1,26 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.add-task-button {
+	background-color: transparent;
+	border: 1px solid $border-secondary;
+	border-radius: $border-radius;
+	cursor: pointer;
+	display: block;
+	color: $text-normal;
+	font-size: $text-md;
+	text-align: start;
+	transition-property: border-color;
+	transition-duration: $transition-duration;
+
+	padding: 8px 12px;
+	width: 100%;
+
+	&:hover {
+		border-color: $border-variant;
+	}
+
+	.atb-icon {
+		margin-right: 8px;
+	}
+}

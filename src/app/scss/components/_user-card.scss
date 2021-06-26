@@ -1,0 +1,46 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.user-card {
+	display: flex;
+	border-bottom: 2px solid $border-secondary;
+
+	.img-container {
+		flex: 0 0 auto;
+		border: 2px solid $border-secondary;
+		border-bottom-width: 0px;
+
+		margin-right: 8px;
+
+		.user-img {
+			object-fit: cover;
+			vertical-align: middle;
+
+			width: 100px;
+			height: 100px;
+		}
+	}
+
+	.user-main {
+		display: flex;
+		flex: 1 0 auto;
+		flex-direction: column;
+
+		.user-welcome {
+			color: $text-muted;
+			font-size: $text-xs;
+		}
+
+		.user-name {
+			color: $text-normal;
+			font-size: $text-lg;
+			letter-spacing: 1px;
+		}
+	}
+
+	.user-created-at {
+		color: $text-muted;
+		flex: 0 0 auto;
+		font-size: $text-sm;
+	}
+}

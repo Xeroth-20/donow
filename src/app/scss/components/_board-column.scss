@@ -1,0 +1,29 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$gap-size: 12px;
+
+.board-column {
+	background-color: $bg-variant;
+	border: 2px solid $border-secondary;
+	border-radius: $border-radius;
+
+	padding: $gap-size;
+	width: 224px;
+
+	.board-column-name {
+		color: $text-secondary;
+		font-size: $text-xmd;
+		font-weight: normal;
+
+		margin-bottom: $gap-size;
+	}
+
+	.bcn-icon {
+		margin-right: $gap-size / 2;
+	}
+
+	.todo-item-container {
+		margin-bottom: $gap-size;
+	}
+}

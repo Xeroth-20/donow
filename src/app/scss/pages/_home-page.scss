@@ -1,0 +1,58 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.home-page {
+	.top {
+		margin-bottom: 42px;
+	}
+
+	.bottom {
+		display: flex;
+
+		.bottom-header {
+			align-items: end;
+			display: flex;
+
+			margin-bottom: 16px;
+			height: 40px;
+		}
+
+		.filters {
+			flex: 2 0 auto;
+		}
+
+		.filters-title {
+			color: $text-normal;
+			flex: 1 0 100%;
+			font-size: $text-xmd;
+			font-weight: normal;
+
+			margin-bottom: 0;
+		}
+
+		.todo-previews {
+			flex: 22 0 auto;
+
+			padding-left: 24px;
+		}
+
+		.todo-previews-header {
+			align-items: flex-end;
+			display: flex;
+			flex: 1 0 100%;
+			justify-content: space-between;
+		}
+
+		.todo-previews-title {
+			color: $text-normal;
+			font-size: $text-lg;
+			font-weight: normal;
+
+			margin-bottom: 0;
+		}
+
+		.todo-preview-container:not(:last-child) {
+			margin-bottom: 26px;
+		}
+	}
+}

@@ -1,0 +1,29 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.btn {
+	border: none;
+	border-radius: $border-radius;
+	cursor: pointer;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-size: $text-md;
+	transition-property: background-color, color;
+	transition-duration: $transition-duration;
+
+	padding: 8px 24px;
+	height: $btn-md;
+}
+
+.btn-accent {
+	background-color: $bg-accent;
+
+	&:hover {
+		background-color: $bg-accent-variant;
+	}
+}
+
+.btn-block {
+	display: block;
+
+	width: 100%;
+}

@@ -1,0 +1,21 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.input {
+	border: 1px solid $bg-muted;
+	border-radius: $border-radius;
+	display: block;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-size: $text-md;
+	outline: none;
+	transition-property: color;
+	transition-duration: $transition-duration;
+
+	padding: 12px 16px;
+	width: 100%;
+	height: $input-md;
+}
+
+.input:focus {
+	color: $text-normal;
+}

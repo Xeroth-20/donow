@@ -1,0 +1,41 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$pad-size: 16px;
+
+.todo-preview {
+	border: 1px solid $bg-muted;
+	border-radius: $border-radius;
+
+	.todo-preview-header {
+		border-bottom: 1px solid $bg-muted;
+		display: flex;
+		justify-content: space-between;
+
+		padding: $pad-size;
+
+		.todo-preview-link {
+			color: $text-link;
+			font-size: $text-xmd;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.todo-created-at {
+			color: $text-muted;
+			font-size: $text-sm;
+		}
+	}
+
+	.todo-preview-body {
+		display: flex;
+
+		padding: $pad-size;
+
+		> .todo-stats:not(:last-of-type) {
+			margin-right: $pad-size;
+		}
+	}
+}

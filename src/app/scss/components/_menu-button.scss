@@ -1,0 +1,24 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$task-menu-button-size: 30px;
+
+.menu-button {
+	border-radius: $task-menu-button-size / 2;
+	color: $text-normal;
+	cursor: pointer;
+	font-size: $text-xxmd;
+	position: relative;
+	text-align: center;
+	transition-property: background-color;
+	transition-duration: $transition-duration;
+
+	padding: 3px;
+	width: $task-menu-button-size;
+	height: $task-menu-button-size;
+
+	&:hover,
+	&:focus {
+		background-color: $bg-gray;
+	}
+}

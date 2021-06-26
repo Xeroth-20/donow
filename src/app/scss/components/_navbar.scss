@@ -1,0 +1,24 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.navbar {
+	.navbar-list {
+		display: flex;
+
+		height: 100%;
+	}
+
+	.navbar-item {
+		color: $text-muted;
+		font-size: $text-md;
+		line-height: $line-height;
+		transition-property: color;
+		transition-duration: $transition-duration;
+
+		padding: 12px 0;
+
+		a:hover {
+			color: $text-normal;
+		}
+	}
+}

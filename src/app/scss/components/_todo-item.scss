@@ -1,0 +1,36 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$pad-size: 12px;
+
+.todo-item {
+	background-color: $bg-normal;
+	border: 2px solid $border-secondary;
+	border-radius: $border-radius;
+	display: flex;
+
+	.description-container {
+		border-radius: $border-radius;
+		overflow: hidden;
+	}
+
+	.description {
+		border: none;
+		color: $text-normal;
+		font-family: 'Roboto Mono', monospace, sans-serif;
+		font-size: $text-md;
+		outline: none;
+		overflow: hidden;
+		resize: none;
+		white-space: pre-line;
+
+		padding: $pad-size;
+		margin: 0;
+		width: 100%;
+	}
+
+	.menu-container {
+		flex: 0 0 auto;
+		padding: $pad-size / 4 * 2;
+	}
+}

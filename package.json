@@ -1,0 +1,40 @@
+{
+	"name": "to-do",
+	"version": "1.0.0",
+	"description": "Describe all your pending tasks.",
+	"private": true,
+	"scripts": {
+		"dev": "webpack serve --env mode=development",
+		"build": "webpack --env mode=production"
+	},
+	"author": "Jhonatan Castillo",
+	"license": "ISC",
+	"dependencies": {
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-redux": "^7.2.4",
+		"react-router-dom": "^5.2.0",
+		"redux": "^4.1.0"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.11",
+		"@types/react-dom": "^17.0.7",
+		"@types/react-redux": "^7.1.16",
+		"@types/react-router-dom": "^5.1.7",
+		"@types/redux": "^3.6.0",
+		"clean-webpack-plugin": "^4.0.0-alpha.0",
+		"copy-webpack-plugin": "^9.0.0",
+		"css-loader": "^5.2.6",
+		"html-webpack-plugin": "^5.3.1",
+		"mini-css-extract-plugin": "^1.6.0",
+		"node-sass": "^6.0.0",
+		"sass-loader": "^12.1.0",
+		"style-loader": "^2.0.0",
+		"ts-loader": "^9.2.3",
+		"typescript": "^4.3.2",
+		"webpack": "^5.39.0",
+		"webpack-cli": "^4.7.2",
+		"webpack-dev-server": "^3.11.2",
+		"webpack-merge": "^5.8.0"
+	}
+}

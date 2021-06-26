@@ -1,0 +1,5 @@
+@import './../utils/vars';
+
+.parent-container {
+	padding: 48px ($max-width - $parent-container-width) / 2;
+}

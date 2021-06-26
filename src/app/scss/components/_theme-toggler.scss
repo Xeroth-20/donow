@@ -1,0 +1,26 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$toggler-height: 30px;
+$toggler-width: $toggler-height * 2;
+$toggler-border-radius: $toggler-height / 2;
+$toggler-circle-size: 22px;
+$toggler-circle-border-radius: $toggler-circle-size / 2;
+$pad-toggler: ($toggler-height - $toggler-circle-size) / 2;
+
+.theme-toggler {
+	background-color: $bg-gray;
+	border-radius: $toggler-border-radius;
+
+	padding: $pad-toggler;
+	width: $toggler-width;
+	height: $toggler-height;
+
+	.toggler-circle {
+		background-color: $bg-normal;
+		border-radius: $toggler-circle-border-radius;
+
+		width: $toggler-circle-size;
+		height: $toggler-circle-size;
+	}
+}

@@ -1,0 +1,19 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.login-image {
+	.thumb {
+		vertical-align: middle;
+
+		width: 534px;
+	}
+
+	.description {
+		color: $text-secondary;
+		font-size: $text-xlll;
+		text-align: center;
+
+		padding: 16px 0;
+		margin-bottom: 0;
+	}
+}

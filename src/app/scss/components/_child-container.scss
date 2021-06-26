@@ -1,0 +1,5 @@
+@import './../utils/vars';
+
+.child-container {
+	padding: 0 ($parent-container-width - $child-container-width) / 2;
+}

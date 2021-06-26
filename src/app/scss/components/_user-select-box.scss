@@ -1,0 +1,30 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.user-select-box {
+	border: 1px solid $bg-muted;
+	border-radius: $border-radius;
+
+	padding: 12px;
+	min-height: 168px;
+
+	.usb-item {
+		border-radius: $border-radius;
+		color: $text-normal;
+		cursor: pointer;
+		font-size: $text-xs;
+		transition-property: background-color;
+		transition-duration: $transition-duration;
+		user-select: none;
+
+		padding: 8px;
+
+		&:hover {
+			background-color: $bg-gray-variant;
+		}
+	}
+
+	.usb-item.selected {
+		background-color: $bg-gray-variant;
+	}
+}

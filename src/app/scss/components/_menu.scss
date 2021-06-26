@@ -1,0 +1,27 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+@keyframes menu-appear {
+	0% {
+		transform-origin: top left;
+		transform: scale(0);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}
+
+.menu {
+	animation: menu-appear 0.2s ease-in-out;
+	background-color: $bg-normal;
+	border: 1px solid $bg-muted;
+	border-radius: $border-radius;
+	cursor: default;
+
+	position: absolute;
+	top: 0;
+	left: 100%;
+
+	padding: 4px 0;
+}

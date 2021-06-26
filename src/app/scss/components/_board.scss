@@ -1,0 +1,16 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$gap-size: 32px / 2;
+
+.board {
+	.board-container {
+		display: flex;
+
+		margin: 0 $gap-size * -1;
+
+		.board-column-container {
+			padding: 0 $gap-size;
+		}
+	}
+}

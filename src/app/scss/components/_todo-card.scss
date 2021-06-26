@@ -1,0 +1,47 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+$stats-gap-size: 8px / 2;
+$margin-bottom: 8px;
+
+.todo-card {
+	border-bottom: 2px solid $border-secondary;
+	display: flex;
+	justify-content: space-between;
+
+	padding-bottom: 12px;
+
+	.todo-main {
+		display: flex;
+		flex-direction: column;
+
+		.user-name {
+			color: $text-muted;
+			font-size: $text-xs;
+
+			margin-bottom: $margin-bottom;
+		}
+
+		.todo-name {
+			color: $text-normal;
+			font-size: $text-lg;
+			letter-spacing: 1px;
+
+			margin-bottom: $margin-bottom;
+		}
+
+		.stats {
+			display: flex;
+			margin: 0 $stats-gap-size * -1;
+
+			.todo-stats-container {
+				padding: 0 $stats-gap-size;
+			}
+		}
+	}
+
+	.todo-created-at {
+		color: $text-muted;
+		font-size: $text-sm;
+	}
+}
