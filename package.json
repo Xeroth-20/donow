@@ -1,7 +1,7 @@
 {
 	"name": "donow",
 	"version": "0.2.0",
-	"description": "Describe all your pending tasks.",
+	"description": "Organiza tus tareas pendientes en listas para realizarlas de la forma más sencilla e intuitiva.",
 	"private": true,
 	"scripts": {
 		"start": "set NODE_ENV=production && node dist-server/index.js",
