@@ -5,7 +5,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use('/', express.static('dist'));
-app.use(/^(?!\/?api)/, (req, res) => {
+app.use(/^(?!\/?api\/)/, (req, res) => {
 	res.sendFile(path.resolve('dist', 'index.html'));
 });
 
