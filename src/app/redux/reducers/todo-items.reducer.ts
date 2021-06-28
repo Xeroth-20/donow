@@ -46,6 +46,7 @@ const todoItems: Reducer<TodoItems, TodoItemsAction> = (
 				return state;
 			};
 			return updateTodoItem();
+
 		case 'REMOVE_TODO_ITEM':
 			const removeTodoItem = () => {
 				const todoItems = state[payload.todoId] || [];
@@ -58,6 +59,7 @@ const todoItems: Reducer<TodoItems, TodoItemsAction> = (
 				return newState;
 			};
 			return payload.todoItemId ? removeTodoItem() : state;
+
 		default:
 			const todoItems = localStorage.getItem(KEY);
 			return todoItems ? JSON.parse(todoItems) : state;

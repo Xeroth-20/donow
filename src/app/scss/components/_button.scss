@@ -5,20 +5,51 @@
 	border: none;
 	border-radius: $border-radius;
 	cursor: pointer;
+	color: $text-normal;
 	font-family: 'Roboto Mono', monospace, sans-serif;
-	font-size: $text-md;
 	transition-property: background-color, color;
 	transition-duration: $transition-duration;
+}
 
-	padding: 8px 24px;
+.btn-md {
+	font-size: $text-md;
+
+	padding: 8px 16px;
 	height: $btn-md;
+}
+
+.btn-sm {
+	$font-size: $text-sm;
+	padding: 4px 12px;
+
+	height: $btn-sm;
 }
 
 .btn-accent {
 	background-color: $bg-accent;
+	color: $text-normal;
 
 	&:hover {
 		background-color: $bg-accent-variant;
+	}
+}
+
+.btn-gray {
+	background-color: $bg-gray;
+	color: $text-normal;
+
+	&:hover {
+		background-color: $bg-gray-strong;
+	}
+}
+
+.btn-flat {
+	background-color: transparent;
+	color: $text-muted;
+
+	&:hover {
+		color: $text-normal;
+		background-color: $bg-gray-variant;
 	}
 }
 

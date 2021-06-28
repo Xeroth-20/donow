@@ -1,0 +1,33 @@
+@import './../utils/vars';
+@import './../utils/colors';
+
+.btn-icon {
+	border: none;
+	border-radius: $btn-icon-md / 2;
+	cursor: pointer;
+	color: $text-normal;
+	font-family: 'Roboto Mono', monospace, sans-serif;
+	font-size: $text-md;
+	transition-property: background-color, color;
+	transition-duration: $transition-duration;
+
+	padding: 0px;
+	height: $btn-icon-md;
+	width: $btn-icon-md;
+}
+
+.btn-icon-accent {
+	background-color: $bg-accent;
+
+	&:hover {
+		background-color: $bg-accent-variant;
+	}
+}
+
+.btn-icon-flat {
+	background-color: transparent;
+
+	&:hover {
+		background-color: $bg-gray-variant;
+	}
+}

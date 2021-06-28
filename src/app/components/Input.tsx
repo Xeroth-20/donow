@@ -1,4 +1,8 @@
-import React, { FunctionComponent, ChangeEventHandler } from 'react';
+import React, {
+	forwardRef,
+	ForwardRefRenderFunction,
+	ChangeEventHandler,
+} from 'react';
 
 interface InputProps {
 	onChange?: ChangeEventHandler<HTMLInputElement>;
@@ -6,13 +10,13 @@ interface InputProps {
 	value?: string;
 }
 
-const Input: FunctionComponent<InputProps> = ({
-	onChange,
-	placeholder,
-	value,
-}) => {
+const Input: ForwardRefRenderFunction<HTMLInputElement | null, InputProps> = (
+	{ onChange, placeholder, value },
+	ref
+) => {
 	return (
 		<input
+			ref={ref}
 			className="input"
 			type="text"
 			placeholder={placeholder}
@@ -22,4 +26,4 @@ const Input: FunctionComponent<InputProps> = ({
 	);
 };
 
-export default Input;
+export default forwardRef<HTMLInputElement | null, InputProps>(Input);

@@ -1,0 +1,7 @@
+{
+	"restartable": "rs",
+	"watch": ["server"],
+	"ext": "ts,tsx,json",
+	"ignore": [".git", "node_modules/**/node_modules"],
+	"exec": "npm run build:server && npm run start:dev"
+}

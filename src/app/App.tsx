@@ -1,5 +1,5 @@
 import React, { StrictMode, FunctionComponent } from 'react';
-import { BrowserRouter as Router, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import routes from './routes';
@@ -7,12 +7,12 @@ import routes from './routes';
 const App: FunctionComponent = () => {
 	return (
 		<StrictMode>
-			<Provider store={store}>
-				<Router>
-					<div className="app">
+			<Provider store={store()}>
+				<div className="app">
+					<BrowserRouter>
 						<Switch>{routes}</Switch>
-					</div>
-				</Router>
+					</BrowserRouter>
+				</div>
 			</Provider>
 		</StrictMode>
 	);

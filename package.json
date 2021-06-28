@@ -1,15 +1,23 @@
 {
-	"name": "to-do",
-	"version": "1.0.0",
+	"name": "donow",
+	"version": "0.2.0",
 	"description": "Describe all your pending tasks.",
 	"private": true,
 	"scripts": {
-		"dev": "webpack serve --env mode=development",
-		"build": "webpack --env mode=production"
+		"start": "set NODE_ENV=production && node dist-server/index.js",
+		"start:dev": "set NODE_ENV=development && node dist-server/index.js",
+		"dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+		"dev:client": "webpack --watch --env mode=development",
+		"dev:client:old": "webpack serve --env mode=development",
+		"dev:server": "nodemon -L",
+		"build": "npm run build:client && npm run build:server",
+		"build:client": "webpack --env mode=production",
+		"build:server": "webpack --config webpack.config.server.js --env mode=production"
 	},
 	"author": "Jhonatan Castillo",
 	"license": "ISC",
 	"dependencies": {
+		"express": "^4.17.1",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-redux": "^7.2.4",
@@ -17,17 +25,23 @@
 		"redux": "^4.1.0"
 	},
 	"devDependencies": {
+		"@types/express": "^4.17.12",
+		"@types/node": "^15.12.5",
 		"@types/react": "^17.0.11",
 		"@types/react-dom": "^17.0.7",
 		"@types/react-redux": "^7.1.16",
 		"@types/react-router-dom": "^5.1.7",
 		"@types/redux": "^3.6.0",
+		"autoprefixer": "^10.2.6",
 		"clean-webpack-plugin": "^4.0.0-alpha.0",
+		"concurrently": "^6.2.0",
 		"copy-webpack-plugin": "^9.0.0",
 		"css-loader": "^5.2.6",
 		"html-webpack-plugin": "^5.3.1",
 		"mini-css-extract-plugin": "^1.6.0",
-		"node-sass": "^6.0.0",
+		"node-sass": "^6.0.1",
+		"nodemon": "^2.0.7",
+		"postcss-loader": "^6.1.0",
 		"sass-loader": "^12.1.0",
 		"style-loader": "^2.0.0",
 		"ts-loader": "^9.2.3",
@@ -35,6 +49,7 @@
 		"webpack": "^5.39.0",
 		"webpack-cli": "^4.7.2",
 		"webpack-dev-server": "^3.11.2",
-		"webpack-merge": "^5.8.0"
+		"webpack-merge": "^5.8.0",
+		"webpack-node-externals": "^3.0.0"
 	}
 }

@@ -12,8 +12,17 @@
 		flex: 1 0 auto;
 	}
 
-	.actions-container {
+	.page-header-actions-container {
+		display: flex;
 		flex: 0 0 auto;
+
+		margin: 0 -15px;
+
+		.page-header-action {
+			flex: 0 0 auto;
+
+			padding: 0 15px;
+		}
 	}
 
 	.brand {

@@ -27,6 +27,8 @@ module.exports = (env = { mode: 'production' }) =>
 			plugins: [
 				new HtmlPlugin({
 					template: 'src/index.html',
+					inject: 'body',
+					scriptLoading: 'blocking',
 				}),
 				new CopyPlugin({
 					patterns: [

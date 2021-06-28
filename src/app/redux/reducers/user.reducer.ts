@@ -8,9 +8,11 @@ const user: Reducer<User, UserAction> = (state = {}, { type, payload }) => {
 			localStorage.setItem(KEY, JSON.stringify(newState));
 
 			return newState;
+
 		case 'REMOVE_USER':
 			localStorage.setItem(KEY, '{}');
 			return {};
+
 		default:
 			const user = localStorage.getItem(KEY);
 			return user ? JSON.parse(user) : state;

@@ -6,7 +6,8 @@ import React, {
 
 interface ButtonProps {
 	onClick?: MouseEventHandler<HTMLButtonElement>;
-	color?: 'accent' | 'flat';
+	color?: 'accent' | 'flat' | 'gray';
+	variant?: 'sm' | 'md';
 	type?: 'button' | 'submit' | 'reset';
 	block?: boolean;
 }
@@ -14,11 +15,14 @@ interface ButtonProps {
 const Button: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
 	onClick,
 	color,
+	variant,
 	type,
 	block,
 	children,
 }) => {
-	const classes = `btn btn-${color!} ${block ? 'btn-block' : ''}`.trim();
+	const classes = `btn btn-${variant!} btn-${color!} ${
+		block ? 'btn-block' : ''
+	}`.trim();
 
 	return (
 		<button className={classes} type={type} onClick={onClick}>
@@ -29,6 +33,7 @@ const Button: FunctionComponent<PropsWithChildren<ButtonProps>> = ({
 
 Button.defaultProps = {
 	color: 'accent',
+	variant: 'md',
 	type: 'button',
 	block: false,
 };

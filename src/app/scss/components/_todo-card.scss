@@ -22,12 +22,24 @@ $margin-bottom: 8px;
 			margin-bottom: $margin-bottom;
 		}
 
-		.todo-name {
+		.todo-title {
+			align-items: center;
+			display: flex;
+
+			margin-bottom: $margin-bottom;
+		}
+
+		.todo-title-name {
 			color: $text-normal;
+			flex: 0 0 auto;
 			font-size: $text-lg;
 			letter-spacing: 1px;
 
-			margin-bottom: $margin-bottom;
+			margin-right: 4px;
+		}
+
+		.todo-title-actions {
+			flex: 0 0 auto;
 		}
 
 		.stats {

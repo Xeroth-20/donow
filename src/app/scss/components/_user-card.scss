@@ -31,10 +31,22 @@
 			font-size: $text-xs;
 		}
 
-		.user-name {
+		.user-title {
+			align-items: center;
+			display: flex;
+		}
+
+		.user-title-name {
 			color: $text-normal;
+			flex: 0 0 auto;
 			font-size: $text-lg;
 			letter-spacing: 1px;
+
+			padding: 4px;
+		}
+
+		.user-title-actions {
+			flex: 0 0 auto;
 		}
 	}
 

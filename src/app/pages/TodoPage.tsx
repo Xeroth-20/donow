@@ -1,12 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { Link, useParams } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeTodo } from './../redux/actions/todos.action';
 import TodoContext from './../components/TodoContext';
 import PageHeader from './../components/PageHeader';
 import ParentContainer from './../components/ParentContainer';
 import ChildContainer from './../components/ChildContainer';
 import TodoCard from './../components/TodoCard';
 import Board from './../components/Board';
+import Button from './../components/Button';
 
 const TodoPage: FunctionComponent = () => {
 	const { id } = useParams<{ id: string }>();
@@ -17,6 +19,13 @@ const TodoPage: FunctionComponent = () => {
 			? { ...result, items: state.todoItems[result.id] || [] }
 			: null;
 	});
+	const dispatch = useDispatch();
+
+	const handleRemoveTodoClick = () => {
+		if (confirm('¿Estás seguro que deseas eliminar está lista?')) {
+			dispatch(removeTodo({ userId: user.username, todoId: todo!.id }));
+		}
+	};
 
 	return (
 		<div className="todo-page">
@@ -29,13 +38,31 @@ const TodoPage: FunctionComponent = () => {
 								<TodoCard />
 							</div>
 							<div className="bottom">
-								<Board />
+								<div className="board-container">
+									<Board />
+								</div>
+								<div className="todo-page-actions">
+									<Button
+										type="button"
+										color="flat"
+										onClick={handleRemoveTodoClick}
+									>
+										<i className="bi-trash" /> Eliminar lista
+									</Button>
+								</div>
 							</div>
 						</ChildContainer>
 					</ParentContainer>
 				</TodoContext.Provider>
 			) : (
-				<span>La lista de tareas con el id {id} no existe.</span>
+				<div>
+					La lista de tareas con el id {id} no existe.{' '}
+					<Link to="/">
+						<Button type="button" color="accent">
+							Volver al inicio
+						</Button>
+					</Link>
+				</div>
 			)}
 		</div>
 	);

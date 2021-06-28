@@ -70,7 +70,7 @@ const HomePage: FunctionComponent = () => {
 										color="accent"
 										onClick={handleAddTodoClick}
 									>
-										Nueva lista
+										<i className="bi-plus-lg" /> Nueva lista
 									</Button>
 								</div>
 							</div>

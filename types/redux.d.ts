@@ -31,7 +31,7 @@ interface UsersActionCreator {
 }
 
 /* Todos */
-type TodosActionType = 'ADD_TODO' | 'REMOVE_TODO';
+type TodosActionType = 'ADD_TODO' | 'UPDATE_TODO' | 'REMOVE_TODO';
 
 interface TodosActionPayload {
 	userId: string;
