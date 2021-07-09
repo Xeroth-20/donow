@@ -51,7 +51,7 @@ const LoginForm: FunctionComponent = () => {
 				/>
 			</div>
 			<div className="form-group">
-				<Button type="submit" color="accent" block>
+				<Button type="submit" variant="sz-md" color="accent" block>
 					Ingresar
 				</Button>
 			</div>

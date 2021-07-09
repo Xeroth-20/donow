@@ -15,11 +15,16 @@ const TodoCard: FunctionComponent = () => {
 	return (
 		<div className="todo-card">
 			{openModal && <NewTodoNameModal close={() => setOpenModal(false)} />}
-			<div className="todo-main">
-				<div className="user-name">{user.username}</div>
-				<div className="todo-title">
-					<div className="todo-title-name">{todo.name}</div>
-					<div className="todo-title-actions">
+			<div className="todo-info">
+				<div className="todo-info-header">
+					<div className="user-name">{user.username}</div>
+					<div className="todo-created-at">
+						Lista creada el {new Date(todo.creationDate).toLocaleDateString()}
+					</div>
+				</div>
+				<div className="todo-main">
+					<div className="todo-title">
+						<div className="todo-name">{todo.name}</div>
 						<IconButton
 							type="button"
 							color="flat"
@@ -27,21 +32,24 @@ const TodoCard: FunctionComponent = () => {
 							onClick={() => setOpenModal(true)}
 						/>
 					</div>
+					<div className="stats">
+						<div className="todo-stats-container">
+							<TodoStats variant="small">
+								<i className="bi-hexagon" /> {stats.todo}
+							</TodoStats>
+						</div>
+						<div className="todo-stats-container">
+							<TodoStats variant="small">
+								<i className="bi-hexagon-half" /> {stats.doing}
+							</TodoStats>
+						</div>
+						<div className="todo-stats-container">
+							<TodoStats variant="small">
+								<i className="bi-hexagon-fill" /> {stats.done}
+							</TodoStats>
+						</div>
+					</div>
 				</div>
-				<div className="stats">
-					<div className="todo-stats-container">
-						<TodoStats variant="small">Por hacer {stats.todo}</TodoStats>
-					</div>
-					<div className="todo-stats-container">
-						<TodoStats variant="small">Haciendo {stats.doing}</TodoStats>
-					</div>
-					<div className="todo-stats-container">
-						<TodoStats variant="small">Hechos {stats.done}</TodoStats>
-					</div>
-				</div>
-			</div>
-			<div className="todo-created-at">
-				Lista creada el {new Date(todo.creationDate).toLocaleDateString()}
 			</div>
 		</div>
 	);

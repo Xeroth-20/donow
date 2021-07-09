@@ -27,7 +27,7 @@ const AddTaskButton: FunctionComponent<PropsWithChildren<{}>> = ({
 			type="button"
 			onClick={handleAddTaskClick}
 		>
-			<i className="bi-plus-circle atb-icon"></i>
+			<i className="bi-plus-circle atb-icon" />
 			<span>{children}</span>
 		</button>
 	);

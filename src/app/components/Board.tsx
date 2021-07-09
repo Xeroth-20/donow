@@ -5,12 +5,14 @@ import BoardColumn from './BoardColumn';
 
 const boardColumns: BoardColumnProperties[] = [
 	{
+		color: 'orange',
 		label: 'Por hacer',
 		icon: 'bi-hexagon',
 		value: 'TODO',
 	},
-	{ label: 'Haciendo', icon: 'bi-hexagon-half', value: 'DOING' },
+	{ color: 'pink', label: 'Haciendo', icon: 'bi-hexagon-half', value: 'DOING' },
 	{
+		color: 'purple',
 		label: 'Hechos',
 		icon: 'bi-hexagon-fill',
 		value: 'DONE',
@@ -48,22 +50,20 @@ const Board: FunctionComponent = () => {
 
 	return (
 		<div className="board">
-			<div className="board-container">
-				{boardColumns.map((boardColumn, i, arr) => {
-					const others = arr.slice(0, i).concat(arr.slice(i + 1));
-					return (
-						<div key={boardColumn.value} className="board-column-container">
-							<BoardColumn
-								context={{
-									current: boardColumn,
-									others,
-								}}
-								items={tasks[boardColumn.value]}
-							/>
-						</div>
-					);
-				})}
-			</div>
+			{boardColumns.map((boardColumn, i, arr) => {
+				const others = arr.slice(0, i).concat(arr.slice(i + 1));
+				return (
+					<div key={boardColumn.value} className="board-column-container">
+						<BoardColumn
+							context={{
+								current: boardColumn,
+								others,
+							}}
+							items={tasks[boardColumn.value]}
+						/>
+					</div>
+				);
+			})}
 		</div>
 	);
 };

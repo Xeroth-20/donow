@@ -21,6 +21,7 @@ const TextArea: FunctionComponent<TextareaHTMLAttributes<HTMLTextAreaElement>> =
 		return (
 			<textarea
 				className={props.className}
+				placeholder={props.placeholder}
 				value={props.value}
 				ref={textarea}
 				onChange={props.onChange}

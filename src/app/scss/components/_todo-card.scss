@@ -6,20 +6,20 @@ $margin-bottom: 8px;
 
 .todo-card {
 	border-bottom: 2px solid $border-secondary;
-	display: flex;
-	justify-content: space-between;
-
 	padding-bottom: 12px;
 
-	.todo-main {
-		display: flex;
-		flex-direction: column;
-
-		.user-name {
+	.todo-info {
+		.todo-info-header {
 			color: $text-muted;
+			display: flex;
 			font-size: $text-xs;
+			justify-content: space-between;
 
 			margin-bottom: $margin-bottom;
+		}
+
+		.user-name {
+			margin-right: 4px;
 		}
 
 		.todo-title {
@@ -29,17 +29,13 @@ $margin-bottom: 8px;
 			margin-bottom: $margin-bottom;
 		}
 
-		.todo-title-name {
+		.todo-name {
 			color: $text-normal;
 			flex: 0 0 auto;
 			font-size: $text-lg;
 			letter-spacing: 1px;
 
 			margin-right: 4px;
-		}
-
-		.todo-title-actions {
-			flex: 0 0 auto;
 		}
 
 		.stats {
@@ -50,10 +46,5 @@ $margin-bottom: 8px;
 				padding: 0 $stats-gap-size;
 			}
 		}
-	}
-
-	.todo-created-at {
-		color: $text-muted;
-		font-size: $text-sm;
 	}
 }

@@ -13,7 +13,12 @@ const LogoutButton: FunctionComponent = () => {
 	};
 
 	return (
-		<Button type="button" color="flat" variant="sm" onClick={handleLogoutClick}>
+		<Button
+			type="button"
+			color="gray"
+			variant="sz-sm"
+			onClick={handleLogoutClick}
+		>
 			<i className="bi-door-open" /> Salir
 		</Button>
 	);

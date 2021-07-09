@@ -1,7 +1,7 @@
 @import './../utils/vars';
 @import './../utils/colors';
 
-$gap-size: 12px;
+$gap-size: 10px;
 
 .board-column {
 	background-color: $bg-variant;
@@ -9,11 +9,11 @@ $gap-size: 12px;
 	border-radius: $border-radius;
 
 	padding: $gap-size;
-	width: 224px;
+	width: 240px;
 
 	.board-column-name {
-		color: $text-secondary;
-		font-size: $text-xmd;
+		color: $text-normal;
+		font-size: $text-md;
 		font-weight: normal;
 
 		margin-bottom: $gap-size;
@@ -26,4 +26,16 @@ $gap-size: 12px;
 	.todo-item-container {
 		margin-bottom: $gap-size;
 	}
+}
+
+.board-column.orange {
+	background-color: #ff9272;
+}
+
+.board-column.pink {
+	background-color: #ff8494;
+}
+
+.board-column.purple {
+	background-color: #b272b2;
 }

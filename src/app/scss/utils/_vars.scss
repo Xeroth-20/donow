@@ -16,16 +16,20 @@ $btn-icon-md: 30px;
 /* Input sizes */
 $input-md: 40px;
 
+$border-radius: 8px;
 $line-height: 1.5;
-
 $transition-duration: 0.2s;
 
 $page-header-height: 40px;
-
-$border-radius: 8px;
-
 $parent-container-width: 1674px;
 $child-container-width: 1366px;
 
+/* Constraints */
 $min-width: 320px;
-$max-width: 1920px;
+$max-width: 1366px;
+
+/* Breakpoints */
+$br-sm: 480px;
+$br-md: 720px;
+$br-lg: 1080px;
+$br-xl: 1366px;

@@ -33,6 +33,7 @@ const TodoItem: FunctionComponent<TodoItemProps> = ({ item }) => {
 			<div className="description-container">
 				<TextArea
 					className="description"
+					placeholder="Escribe una tarea"
 					value={item.description}
 					onChange={handleDescriptionChange}
 				/>

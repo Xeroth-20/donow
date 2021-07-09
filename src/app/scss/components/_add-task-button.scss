@@ -8,16 +8,16 @@
 	cursor: pointer;
 	display: block;
 	color: $text-normal;
-	font-size: $text-md;
+	font-size: $text-sm;
 	text-align: start;
-	transition-property: border-color;
+	transition-property: background-color;
 	transition-duration: $transition-duration;
 
 	padding: 8px 12px;
 	width: 100%;
 
 	&:hover {
-		border-color: $border-variant;
+		background-color: rgba(#fff, 0.16);
 	}
 
 	.atb-icon {

@@ -4,11 +4,21 @@
 	}
 
 	.board-container {
+		overflow: auto;
+
+		padding-bottom: 8px;
 		margin-bottom: 16px;
+		max-height: 480px;
 	}
 
 	.todo-page-actions {
 		display: flex;
 		justify-content: flex-end;
+	}
+
+	.error {
+		.message {
+			margin-bottom: 12px;
+		}
 	}
 }

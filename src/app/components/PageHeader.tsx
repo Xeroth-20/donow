@@ -2,7 +2,6 @@ import React, { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Navbar from './Navbar';
-import ThemeToggler from './ThemeToggler';
 import LogoutButton from './LogoutButton';
 
 const PageHeader: FunctionComponent = () => {
@@ -17,9 +16,6 @@ const PageHeader: FunctionComponent = () => {
 				<Navbar />
 			</div>
 			<div className="page-header-actions-container">
-				<div className="page-header-action">
-					<ThemeToggler />
-				</div>
 				{logged && (
 					<div className="page-header-action">
 						<LogoutButton />

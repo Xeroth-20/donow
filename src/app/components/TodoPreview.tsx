@@ -23,9 +23,15 @@ const TodoPreview: FunctionComponent<TodoPreviewProps> = ({ todo }) => {
 				</div>
 			</div>
 			<div className="todo-preview-body">
-				<TodoStats>Por hacer {stats.todo}</TodoStats>
-				<TodoStats>Haciendo {stats.doing}</TodoStats>
-				<TodoStats>Hechos {stats.done}</TodoStats>
+				<TodoStats>
+					<i className="bi-hexagon" /> {stats.todo}
+				</TodoStats>
+				<TodoStats>
+					<i className="bi-hexagon-half" /> {stats.doing}
+				</TodoStats>
+				<TodoStats>
+					<i className="bi-hexagon-fill" /> {stats.done}
+				</TodoStats>
 			</div>
 		</div>
 	);

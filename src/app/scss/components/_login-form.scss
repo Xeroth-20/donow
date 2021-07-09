@@ -2,8 +2,10 @@
 @import './../utils/colors';
 
 .login-form {
-	padding: 38px 32px;
-	max-width: 368px;
+	display: block;
+
+	max-width: 260px;
+	width: 100%;
 
 	.form-group:not(:last-child) {
 		margin-bottom: 16px;

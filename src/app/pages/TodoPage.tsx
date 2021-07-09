@@ -44,6 +44,7 @@ const TodoPage: FunctionComponent = () => {
 								<div className="todo-page-actions">
 									<Button
 										type="button"
+										variant={['sz-sm', 'br-lg-sz-md']}
 										color="flat"
 										onClick={handleRemoveTodoClick}
 									>
@@ -55,13 +56,17 @@ const TodoPage: FunctionComponent = () => {
 					</ParentContainer>
 				</TodoContext.Provider>
 			) : (
-				<div>
-					La lista de tareas con el id {id} no existe.{' '}
-					<Link to="/">
-						<Button type="button" color="accent">
-							Volver al inicio
-						</Button>
-					</Link>
+				<div className="error">
+					<ParentContainer>
+						<div className="message">
+							La lista de tareas con el id {id} no existe.{' '}
+						</div>
+						<Link to="/">
+							<Button type="button" variant="sz-sm" color="accent">
+								Volver al inicio
+							</Button>
+						</Link>
+					</ParentContainer>
 				</div>
 			)}
 		</div>

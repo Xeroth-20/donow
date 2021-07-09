@@ -3,14 +3,14 @@ const nodeExternals = require('webpack-node-externals');
 
 module.exports = (env = { mode: 'production' }) => ({
 	mode: env.mode,
-	entry: './server/index.tsx',
+	entry: './server/index.ts',
 	output: {
 		path: path.resolve('dist-server'),
 		filename: 'index.js',
 	},
 	target: 'node',
 	resolve: {
-		extensions: ['.js', '.ts', '.tsx'],
+		extensions: ['.js', '.ts'],
 	},
 	externals: [nodeExternals()],
 	module: {

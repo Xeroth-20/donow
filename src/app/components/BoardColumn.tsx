@@ -12,8 +12,9 @@ const BoardColumn: FunctionComponent<BoardColumnProps> = ({
 	items,
 	context,
 }) => {
+	const classes = `board-column ${context.current.color}`.trim();
 	return (
-		<div className="board-column">
+		<div className={classes}>
 			<BoardColumnContext.Provider value={context}>
 				<h3 className="board-column-name">
 					<i className={`${context.current.icon} bcn-icon`}></i>

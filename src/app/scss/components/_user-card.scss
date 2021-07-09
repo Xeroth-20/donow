@@ -16,15 +16,25 @@
 			object-fit: cover;
 			vertical-align: middle;
 
-			width: 100px;
-			height: 100px;
+			width: 80px;
+			height: 80px;
 		}
 	}
 
-	.user-main {
+	.user-info {
 		display: flex;
 		flex: 1 0 auto;
 		flex-direction: column;
+
+		.user-main {
+			flex: 1 0 auto;
+		}
+
+		.user-created-at {
+			color: $text-muted;
+			flex: 0 0 auto;
+			font-size: $text-xs;
+		}
 
 		.user-welcome {
 			color: $text-muted;
@@ -36,23 +46,40 @@
 			display: flex;
 		}
 
-		.user-title-name {
+		.user-name {
 			color: $text-normal;
-			flex: 0 0 auto;
+			display: inline-block;
 			font-size: $text-lg;
 			letter-spacing: 1px;
-
-			padding: 4px;
-		}
-
-		.user-title-actions {
-			flex: 0 0 auto;
+			margin-right: 4px;
 		}
 	}
 
-	.user-created-at {
-		color: $text-muted;
-		flex: 0 0 auto;
-		font-size: $text-sm;
+	@media screen and (min-width: $br-sm) {
+	}
+
+	@media screen and (min-width: $br-md) {
+		.user-info {
+			flex-direction: row;
+		}
+
+		.img-container {
+			.user-img {
+				width: 92px;
+				height: 92px;
+			}
+		}
+	}
+
+	@media screen and (min-width: $br-lg) {
+		.img-container {
+			.user-img {
+				width: 100px;
+				height: 100px;
+			}
+		}
+	}
+
+	@media screen and (min-width: $br-xl) {
 	}
 }

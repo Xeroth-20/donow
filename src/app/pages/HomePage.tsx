@@ -67,6 +67,7 @@ const HomePage: FunctionComponent = () => {
 									<h2 className="todo-previews-title">Lista de tareas</h2>
 									<Button
 										type="button"
+										variant={['sz-sm', 'br-lg-sz-md']}
 										color="accent"
 										onClick={handleAddTodoClick}
 									>

@@ -1,5 +1,13 @@
 @import './../utils/vars';
 
 .child-container {
-	padding: 0 ($parent-container-width - $child-container-width) / 2;
+	width: 100%;
+
+	@media screen and (min-width: $br-lg) {
+		padding: 0 48px;
+	}
+
+	@media screen and (min-width: $br-xl) {
+		padding: 0 92px;
+	}
 }

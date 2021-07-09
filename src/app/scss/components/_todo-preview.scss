@@ -1,7 +1,7 @@
 @import './../utils/vars';
 @import './../utils/colors';
 
-$pad-size: 16px;
+$pad-size: 12px;
 
 .todo-preview {
 	border: 1px solid $bg-muted;
@@ -16,7 +16,7 @@ $pad-size: 16px;
 
 		.todo-preview-link {
 			color: $text-link;
-			font-size: $text-xmd;
+			font-size: $text-md;
 
 			&:hover {
 				text-decoration: underline;
@@ -25,7 +25,7 @@ $pad-size: 16px;
 
 		.todo-created-at {
 			color: $text-muted;
-			font-size: $text-sm;
+			font-size: $text-xs;
 		}
 	}
 
@@ -36,6 +36,26 @@ $pad-size: 16px;
 
 		> .todo-stats:not(:last-of-type) {
 			margin-right: $pad-size;
+		}
+	}
+
+	@media screen and (min-width: $br-md) {
+		$md-pad-size: 16px;
+
+		.todo-preview-header {
+			padding: $md-pad-size;
+
+			.todo-preview-link {
+				font-size: $text-xmd;
+			}
+		}
+
+		.todo-preview-body {
+			padding: $md-pad-size;
+
+			> .todo-stats:not(:last-of-type) {
+				margin-right: $md-pad-size;
+			}
 		}
 	}
 }

@@ -17,11 +17,11 @@ const UserCard: FunctionComponent = () => {
 					alt="User image"
 				/>
 			</div>
-			<div className="user-main">
-				<span className="user-welcome">Bienvenido</span>
-				<div className="user-title">
-					<div className="user-title-name">{user.username}</div>
-					<div className="user-title-actions">
+			<div className="user-info">
+				<div className="user-main">
+					<div className="user-welcome">Bienvenido</div>
+					<div className="user-title">
+						<div className="user-name">{user.username}</div>
 						<IconButton
 							type="button"
 							color="flat"
@@ -30,9 +30,9 @@ const UserCard: FunctionComponent = () => {
 						/>
 					</div>
 				</div>
-			</div>
-			<div className="user-created-at">
-				Usuario registrado el {new Date(user.signupDate).toLocaleDateString()}
+				<div className="user-created-at">
+					Usuario registrado el {new Date(user.signupDate).toLocaleDateString()}
+				</div>
 			</div>
 		</div>
 	);

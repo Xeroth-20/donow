@@ -11,18 +11,27 @@
 	transition-duration: $transition-duration;
 }
 
-.btn-md {
+.btn-sz-md {
 	font-size: $text-md;
 
 	padding: 8px 16px;
 	height: $btn-md;
 }
 
-.btn-sm {
+.btn-sz-sm {
 	$font-size: $text-sm;
 	padding: 4px 12px;
 
 	height: $btn-sm;
+}
+
+@media screen and (min-width: $br-lg) {
+	.btn-br-lg-sz-md {
+		font-size: $text-md;
+
+		padding: 8px 16px;
+		height: $btn-md;
+	}
 }
 
 .btn-accent {
@@ -35,11 +44,11 @@
 }
 
 .btn-gray {
-	background-color: $bg-gray;
+	background-color: $bg-gray-variant;
 	color: $text-normal;
 
 	&:hover {
-		background-color: $bg-gray-strong;
+		background-color: $bg-gray;
 	}
 }
 

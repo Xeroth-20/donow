@@ -4,7 +4,6 @@
 .page-header {
 	display: flex;
 
-	margin-bottom: 56px;
 	height: $page-header-height;
 
 	.nav-container {
@@ -19,6 +18,8 @@
 		margin: 0 -15px;
 
 		.page-header-action {
+			align-items: center;
+			display: flex;
 			flex: 0 0 auto;
 
 			padding: 0 15px;
@@ -32,6 +33,45 @@
 		line-height: $line-height;
 
 		padding: 2px 0;
-		margin-right: 42px;
+	}
+
+	@media screen and (max-width: $br-sm) {
+		margin-bottom: 32px;
+
+		.brand {
+			margin-right: 12px;
+		}
+	}
+
+	@media screen and (min-width: $br-sm) {
+		margin-bottom: 38px;
+
+		.brand {
+			margin-right: 16px;
+		}
+	}
+
+	@media screen and (min-width: $br-md) {
+		margin-bottom: 44px;
+
+		.brand {
+			margin-right: 24px;
+		}
+	}
+
+	@media screen and (min-width: $br-lg) {
+		margin-bottom: 50px;
+
+		.brand {
+			margin-right: 32px;
+		}
+	}
+
+	@media screen and (min-width: $br-xl) {
+		margin-bottom: 56px;
+
+		.brand {
+			margin-right: 42px;
+		}
 	}
 }
