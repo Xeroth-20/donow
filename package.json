@@ -1,6 +1,6 @@
 {
 	"name": "donow",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "Organiza tus tareas pendientes en listas para realizarlas de la forma más sencilla e intuitiva.",
 	"private": true,
 	"scripts": {

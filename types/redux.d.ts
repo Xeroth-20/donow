@@ -19,7 +19,7 @@ interface UserActionCreator {
 }
 
 /* Users */
-type UsersActionType = 'ADD_USER';
+type UsersActionType = 'ADD_USER' | 'UPDATE_USER';
 
 interface UsersAction {
 	type: UsersActionType;

@@ -8,7 +8,7 @@ const LoginImage: FunctionComponent = () => {
 				src="/assets/svgs/login-image.svg"
 				alt="Login image"
 			/>
-			<p className="description">Lorem ipsum</p>
+			<p className="description">¡Empieza ahora!</p>
 		</div>
 	);
 };

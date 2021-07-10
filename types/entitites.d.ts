@@ -1,4 +1,8 @@
-type ITodoItemState = 'TODO' | 'DOING' | 'DONE';
+interface IUser {
+	id: string;
+	username: string;
+	signupDate: Date;
+}
 
 interface ITodoItem {
 	id: string;
@@ -17,10 +21,7 @@ interface ITodoPopulated extends ITodo {
 	items: ITodoItem[];
 }
 
-interface IUser {
-	username: string;
-	signupDate: Date;
-}
+type ITodoItemState = 'TODO' | 'DOING' | 'DONE';
 
 type User = IUser | {};
 

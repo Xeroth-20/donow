@@ -14,7 +14,9 @@ const TodoPage: FunctionComponent = () => {
 	const { id } = useParams<{ id: string }>();
 	const user = useSelector<Store, IUser>((state) => state.user as IUser);
 	const todo = useSelector<Store, ITodoPopulated | null>((state) => {
-		const result = state.todos[user.username].find((td) => td.id === id);
+		const userTodos = state.todos[user.id] || [];
+		const result = userTodos.find((td) => td.id === id);
+
 		return result
 			? { ...result, items: state.todoItems[result.id] || [] }
 			: null;
@@ -23,12 +25,12 @@ const TodoPage: FunctionComponent = () => {
 
 	const handleRemoveTodoClick = () => {
 		if (confirm('¿Estás seguro que deseas eliminar está lista?')) {
-			dispatch(removeTodo({ userId: user.username, todoId: todo!.id }));
+			dispatch(removeTodo({ userId: user.id, todoId: todo!.id }));
 		}
 	};
 
 	return (
-		<div className="todo-page">
+		<div className="todo-page fade-in">
 			{todo ? (
 				<TodoContext.Provider value={todo}>
 					<ParentContainer>

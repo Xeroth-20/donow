@@ -14,7 +14,7 @@ const HomePage: FunctionComponent = () => {
 	const [newTodo, setNewTodo] = useState<ITodo | undefined>();
 	const user = useSelector<Store, User>((state) => state.user) as IUser;
 	const todos = useSelector<Store, ITodoPopulated[]>((state) => {
-		const result = state.todos[user.username] || [];
+		const result = state.todos[user.id] || [];
 		if (result) {
 			return result.map((todo) => {
 				const items = state.todoItems[todo.id] || [];
@@ -37,15 +37,15 @@ const HomePage: FunctionComponent = () => {
 	const handleAddTodoClick = () => {
 		const todo: ITodo = {
 			id: Date.now().toString(16),
-			name: 'Untitled',
+			name: 'Sin titulo',
 			creationDate: new Date(),
 		};
-		dispatch(addTodo({ userId: user.username, todo }));
+		dispatch(addTodo({ userId: user.id, todo }));
 		setNewTodo(todo);
 	};
 
 	return (
-		<div className="home-page">
+		<div className="home-page fade-in">
 			<ParentContainer>
 				<PageHeader />
 				<ChildContainer>
@@ -75,11 +75,17 @@ const HomePage: FunctionComponent = () => {
 									</Button>
 								</div>
 							</div>
-							{todos.map((todo) => (
-								<div className="todo-preview-container" key={todo.id}>
-									<TodoPreview todo={todo} />
-								</div>
-							))}
+							{todos.length > 0 ? (
+								todos.map((todo) => (
+									<div className="todo-preview-container" key={todo.id}>
+										<TodoPreview todo={todo} />
+									</div>
+								))
+							) : (
+								<p className="no-todo-previews">
+									Haz click en nueva lista para comenzar.
+								</p>
+							)}
 						</div>
 					</div>
 				</ChildContainer>

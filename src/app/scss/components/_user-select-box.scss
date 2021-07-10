@@ -27,4 +27,9 @@
 	.usb-item.selected {
 		background-color: $bg-gray-variant;
 	}
+
+	.no-usb-item {
+		color: $text-muted;
+		font-size: $text-sm;
+	}
 }

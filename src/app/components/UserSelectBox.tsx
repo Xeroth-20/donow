@@ -1,4 +1,4 @@
-import React, { useState, FunctionComponent, MouseEventHandler } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import { useSelector } from 'react-redux';
 
 interface UserSelectBoxProps {
@@ -16,7 +16,7 @@ const UserSelectBox: FunctionComponent<UserSelectBoxProps> = ({
 	const createUsbItemSelectHandler = (user: IUser) => () => {
 		let unselect = false;
 		if (userSelected) {
-			unselect = userSelected.username === user.username;
+			unselect = userSelected.id === user.id;
 		}
 
 		setUserSelected(unselect ? null : user);
@@ -28,21 +28,24 @@ const UserSelectBox: FunctionComponent<UserSelectBoxProps> = ({
 
 	return (
 		<div className="user-select-box">
-			{users.map((user) => {
-				const selected =
-					userSelected !== null && userSelected.username === user.username;
-				const classes = `usb-item ${selected && 'selected'}`.trim();
+			{users.length > 0 ? (
+				users.map((user) => {
+					const selected = userSelected !== null && userSelected.id === user.id;
+					const classes = `usb-item ${selected ? 'selected' : ''}`.trim();
 
-				return (
-					<div
-						key={user.username}
-						className={classes}
-						onClick={createUsbItemSelectHandler(user)}
-					>
-						{user.username}
-					</div>
-				);
-			})}
+					return (
+						<div
+							key={user.id}
+							className={classes}
+							onClick={createUsbItemSelectHandler(user)}
+						>
+							{user.username}
+						</div>
+					);
+				})
+			) : (
+				<p className="no-usb-item">No hay usuarios registrados.</p>
+			)}
 		</div>
 	);
 };

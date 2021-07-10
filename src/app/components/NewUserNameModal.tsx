@@ -1,5 +1,4 @@
 import React, {
-	useState,
 	useEffect,
 	useRef,
 	FunctionComponent,
@@ -7,31 +6,53 @@ import React, {
 	ChangeEventHandler,
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { setCurrentUser } from './../redux/actions/user.action';
+import { updateUser } from './../redux/actions/users.action';
+import useField from './../hooks/use-field';
 import Modal from './Modal';
 import Input from './Input';
 import Button from './Button';
+import { validateUserName } from './../functions/field-validators';
 
 interface NewUserNameModal {
 	close?: () => void;
 }
 
 const NewUserNameModal: FunctionComponent<NewUserNameModal> = ({ close }) => {
-	const [newUserName, setNewUserName] = useState<string>('');
 	const user = useSelector<Store, IUser>((state) => state.user as IUser);
+	const users = useSelector<Store, IUser[]>((state) =>
+		Object.values(state.users)
+	);
+	const [usernameField, setUsernameField] = useField('', (username) =>
+		validateUserName(username, users)
+	);
 	const ref = useRef<HTMLInputElement | null>(null);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		if (ref.current) {
 			ref.current.focus();
 		}
-	});
+	}, []);
 
 	const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
 		e.preventDefault();
+		if (usernameField.error === null) {
+			const userModified: IUser = {
+				...user,
+				username: usernameField.value,
+			};
+			dispatch(updateUser(userModified));
+			dispatch(setCurrentUser(userModified));
+
+			if (close) {
+				close();
+			}
+		}
 	};
 
 	const handleChange: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
-		setNewUserName(target.value);
+		setUsernameField(target.value);
 	};
 
 	return (
@@ -47,9 +68,12 @@ const NewUserNameModal: FunctionComponent<NewUserNameModal> = ({ close }) => {
 						<Input
 							ref={ref}
 							placeholder={user.username}
-							value={newUserName}
+							value={usernameField.value}
 							onChange={handleChange}
 						/>
+						{usernameField.error && usernameField.dirty && (
+							<small className="hint-error">{usernameField.error}</small>
+						)}
 					</div>
 					<div className="form-group">
 						<div className="form-row">

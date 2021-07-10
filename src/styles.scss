@@ -53,3 +53,27 @@ a {
 .form-col-auto {
 	flex: 0 0 auto;
 }
+
+.hint-error {
+	color: #ff2442;
+	display: block;
+	font-size: 10px;
+	text-align: center;
+
+	padding-top: 4px;
+}
+
+.fade-in {
+	animation: fade-in 0.2s ease-in-out;
+}
+
+/* Animations */
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}

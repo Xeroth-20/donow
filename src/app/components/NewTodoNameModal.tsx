@@ -9,17 +9,19 @@ import React, {
 } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { updateTodo } from './../redux/actions/todos.action';
+import useField from './../hooks/use-field';
 import TodoContext from './TodoContext';
 import Modal from './Modal';
 import Input from './Input';
 import Button from './Button';
+import { validateTodoName } from './../functions/field-validators';
 
 interface NewTodoNameModal {
 	close?: () => void;
 }
 
 const NewTodoNameModal: FunctionComponent<NewTodoNameModal> = ({ close }) => {
-	const [newTodoName, setNewTodoName] = useState<string>('');
+	const [todonameField, setTodonameField] = useField('', validateTodoName);
 	const todo = useContext(TodoContext) as ITodo;
 	const user = useSelector<Store, IUser>((state) => state.user as IUser);
 	const ref = useRef<HTMLInputElement | null>(null);
@@ -33,23 +35,25 @@ const NewTodoNameModal: FunctionComponent<NewTodoNameModal> = ({ close }) => {
 
 	const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
 		e.preventDefault();
-		dispatch(
-			updateTodo({
-				userId: user.username,
-				todo: {
-					...todo,
-					name: newTodoName,
-				},
-			})
-		);
+		if (todonameField.error === null) {
+			dispatch(
+				updateTodo({
+					userId: user.id,
+					todo: {
+						...todo,
+						name: todonameField.value,
+					},
+				})
+			);
 
-		if (close) {
-			close();
+			if (close) {
+				close();
+			}
 		}
 	};
 
 	const handleChange: ChangeEventHandler<HTMLInputElement> = ({ target }) => {
-		setNewTodoName(target.value);
+		setTodonameField(target.value);
 	};
 
 	return (
@@ -65,9 +69,12 @@ const NewTodoNameModal: FunctionComponent<NewTodoNameModal> = ({ close }) => {
 						<Input
 							ref={ref}
 							placeholder={todo.name}
-							value={newTodoName}
+							value={todonameField.value}
 							onChange={handleChange}
 						/>
+						{todonameField.error && todonameField.dirty && (
+							<small className="hint-error">{todonameField.error}</small>
+						)}
 					</div>
 					<div className="form-group">
 						<div className="form-row">

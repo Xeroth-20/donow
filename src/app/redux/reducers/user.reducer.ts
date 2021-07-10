@@ -1,21 +1,30 @@
 import { Reducer } from 'redux';
 
+const KEY = 'user';
+const getUserLocalStorage = (): IUser | undefined => {
+	const user = localStorage.getItem(KEY);
+	return user && JSON.parse(user);
+};
+
+const setUserLocalStorage = (user: User) => {
+	localStorage.setItem(KEY, JSON.stringify(user));
+};
+
 const user: Reducer<User, UserAction> = (state = {}, { type, payload }) => {
-	const KEY = 'user';
 	switch (type) {
 		case 'SET_USER':
 			const newState = payload || state;
-			localStorage.setItem(KEY, JSON.stringify(newState));
+			setUserLocalStorage(newState);
 
 			return newState;
 
 		case 'REMOVE_USER':
-			localStorage.setItem(KEY, '{}');
+			setUserLocalStorage({});
 			return {};
 
 		default:
-			const user = localStorage.getItem(KEY);
-			return user ? JSON.parse(user) : state;
+			const user = getUserLocalStorage();
+			return user || state;
 	}
 };
 

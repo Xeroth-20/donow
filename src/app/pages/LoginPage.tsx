@@ -6,7 +6,7 @@ import Login from './../components/Login';
 
 const LoginPage: FunctionComponent = () => {
 	return (
-		<div className="login-page">
+		<div className="login-page fade-in">
 			<ParentContainer>
 				<PageHeader />
 				<ChildContainer>

@@ -46,9 +46,6 @@
 		}
 	}
 
-	@media screen and (min-width: $br-sm) {
-	}
-
 	@media screen and (min-width: $br-md) {
 		.top {
 			margin-bottom: 32px;
@@ -86,6 +83,11 @@
 
 			.todo-preview-container:not(:last-child) {
 				margin-bottom: 16px;
+			}
+
+			.no-todo-previews {
+				color: $text-not-muted;
+				font-size: $text-sm;
 			}
 		}
 	}
