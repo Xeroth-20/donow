@@ -6,15 +6,22 @@ interface InputField {
 	dirty: boolean;
 }
 
-const useField = (
-	initialValue: string,
-	validator?: (value: string) => string | null
-): [InputField, (newValue: string) => void] => {
+interface UseFieldHook {
+	(initialValue: string, validator?: (value: string) => string | null): [
+		InputField,
+		(newValue: string) => void,
+		(dirty: boolean) => void
+	];
+}
+
+const useField: UseFieldHook = (initialValue, validator?) => {
 	const [value, setValue] = useState<string>(initialValue);
-	const [error, setError] = useState<string | null>(null);
+	const [error, setError] = useState<string | null>(
+		validator ? validator(initialValue) : null
+	);
 	const [dirty, setDirty] = useState<boolean>(false);
 
-	const dispatch = (newValue: string) => {
+	const setNewValue = (newValue: string) => {
 		setDirty(true);
 		if (validator) {
 			setError(validator(newValue));
@@ -22,7 +29,7 @@ const useField = (
 		setValue(newValue);
 	};
 
-	return [{ value, error, dirty }, dispatch];
+	return [{ value, error, dirty }, setNewValue, setDirty];
 };
 
 export default useField;

@@ -11,11 +11,10 @@
 	.navbar-item {
 		color: $text-muted;
 		font-size: $text-md;
-		line-height: $line-height;
 		transition-property: color;
 		transition-duration: $transition-duration;
 
-		padding: 12px 0;
+		padding: 7px 0;
 
 		a:hover {
 			color: $text-normal;

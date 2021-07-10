@@ -21,7 +21,10 @@ interface NewTodoNameModal {
 }
 
 const NewTodoNameModal: FunctionComponent<NewTodoNameModal> = ({ close }) => {
-	const [todonameField, setTodonameField] = useField('', validateTodoName);
+	const [todonameField, setTodonameField, setTodonameFieldDirty] = useField(
+		'',
+		validateTodoName
+	);
 	const todo = useContext(TodoContext) as ITodo;
 	const user = useSelector<Store, IUser>((state) => state.user as IUser);
 	const ref = useRef<HTMLInputElement | null>(null);
@@ -49,6 +52,8 @@ const NewTodoNameModal: FunctionComponent<NewTodoNameModal> = ({ close }) => {
 			if (close) {
 				close();
 			}
+		} else {
+			setTodonameFieldDirty(true);
 		}
 	};
 

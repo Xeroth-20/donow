@@ -23,8 +23,9 @@ const NewUserNameModal: FunctionComponent<NewUserNameModal> = ({ close }) => {
 	const users = useSelector<Store, IUser[]>((state) =>
 		Object.values(state.users)
 	);
-	const [usernameField, setUsernameField] = useField('', (username) =>
-		validateUserName(username, users)
+	const [usernameField, setUsernameField, setUsernameFieldDirty] = useField(
+		'',
+		(username) => validateUserName(username, users)
 	);
 	const ref = useRef<HTMLInputElement | null>(null);
 	const dispatch = useDispatch();
@@ -48,6 +49,8 @@ const NewUserNameModal: FunctionComponent<NewUserNameModal> = ({ close }) => {
 			if (close) {
 				close();
 			}
+		} else {
+			setUsernameFieldDirty(true);
 		}
 	};
 

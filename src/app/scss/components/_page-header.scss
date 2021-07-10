@@ -7,8 +7,11 @@
 	height: $page-header-height;
 
 	.nav-container {
+		align-items: stretch;
 		display: flex;
 		flex: 1 0 auto;
+
+		height: inherit;
 	}
 
 	.page-header-actions-container {
@@ -30,9 +33,7 @@
 		color: $text-normal;
 		display: inline-block;
 		font-size: $text-xl;
-		line-height: $line-height;
-
-		padding: 2px 0;
+		line-height: 1.15;
 	}
 
 	@media screen and (max-width: $br-sm) {

@@ -18,8 +18,9 @@ const LoginForm: FunctionComponent = () => {
 	const users = useSelector<Store, IUser[]>((state) =>
 		Object.values(state.users)
 	);
-	const [usernameField, setUsernameField] = useField('', (username) =>
-		validateUserName(username, null)
+	const [usernameField, setUsernameField, setUsernameFieldDirty] = useField(
+		'',
+		(username) => validateUserName(username, null)
 	);
 	const dispatch = useDispatch();
 
@@ -41,6 +42,8 @@ const LoginForm: FunctionComponent = () => {
 
 			dispatch(setCurrentUser(user));
 			dispatch(login());
+		} else {
+			setUsernameFieldDirty(true);
 		}
 	};
 
